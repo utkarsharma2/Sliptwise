@@ -115,3 +115,10 @@ class SettleViewSet(viewsets.ViewSet):
         ledger.amount = ledger.amount - int(request.query_params['amount'])
         ledger.save()
         return Response(status.HTTP_200_OK)
+    
+class SummaryViewSet(viewsets.ViewSet):
+    
+    def list(self, request):
+        data = models.Ledger.objects.filter(group=request.query_params['group'])
+        resp = serializer.LedgerSerializer(data, many=True)
+        return Response(resp.data)

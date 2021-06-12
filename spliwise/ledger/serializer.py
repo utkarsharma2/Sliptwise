@@ -23,3 +23,9 @@ class ContributionsSerializer(serializers.ModelSerializer):
         model = models.Contributions
         fields = '__all__'
         depth = 1
+
+class LedgerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Ledger
+        fields = '__all__'
+        depth = 1
