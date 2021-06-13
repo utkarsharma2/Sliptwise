@@ -122,3 +122,14 @@ class SummaryViewSet(viewsets.ViewSet):
         data = models.Ledger.objects.filter(group=request.query_params['group'])
         resp = serializer.LedgerSerializer(data, many=True)
         return Response(resp.data)
+
+class AddUserViewSet(viewsets.ViewSet):
+    
+    def list(self, request):
+        import ipdb; ipdb.set_trace()
+        group = models.Group.objects.filter(id=request.query_params['group']).first()
+        user = models.User.objects.filter(id=request.query_params['user']).first()
+        
+        group.users.add(user)
+
+        return Response(status.HTTP_200_OK)

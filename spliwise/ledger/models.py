@@ -8,6 +8,7 @@ class User(models.Model):
 
 class Group(models.Model):
     name = models.CharField(max_length=200)
+    users = models.ManyToManyField(User)
     def __str__(self):
         return self.name
 

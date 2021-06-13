@@ -11,6 +11,7 @@ router.register('group', views.GroupViewSet, basename='group')
 router.register('transactions', views.TransactionsViewSet, basename='transactions')
 router.register('settle', views.SettleViewSet, basename='settle')
 router.register('summary', views.SummaryViewSet, basename='summary')
+router.register('adduser', views.AddUserViewSet, basename='adduser')
 
 urlpatterns = [
     url('', include(router.urls)),
