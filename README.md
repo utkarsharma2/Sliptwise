@@ -8,7 +8,13 @@ curl --location --request POST 'http://127.0.0.1:8000/ledger/group/' \
 --data-raw '{
     "name": "group1"
 }'
+
 ```
+## Add user to Group
+```
+curl --location --request GET 'http://127.0.0.1:8000/ledger/adduser/?user=3&group=6'
+```
+
 ## User
 ```
 curl --location --request POST 'http://127.0.0.1:8000/ledger/user/' \
